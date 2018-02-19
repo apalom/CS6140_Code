@@ -5,7 +5,7 @@ Created on Mon Feb 19 13:58:48 2018
 @author: Alex Palomino
 """
 
-def funcWhyID(df1):    
+def funcWhyID(df1, whyIDdict):    
     
     whyIDdict = {'-1' : 'Appropriate skip' ,
     '-7' : 'Refused' ,
@@ -42,5 +42,10 @@ def funcWhyID(df1):
     '70' : 'Transport someone' ,
     '71' : 'Pick up someone' ,
     '72' : 'Take and wait'}
-
+    
     df1["whyDesc"] = df1["WHYTO"].map(whyIDdict)
+
+    return (df1, whyIDdict)
+
+
+    
