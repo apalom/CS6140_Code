@@ -10,6 +10,16 @@ import timeit
 timeExec= []
 start_time = timeit.default_timer()
 
+
+whyID = {'-1' : 'Appropriate skip' ,
+'-7' : 'Refused' ,
+'-8' : 'Dont know' ,
+'-9' : 'Not ascertained' ,
+'1' : 'Home' ,
+'10' : 'Work' ,
+'11' : 'Go to work' ,}
+
+
 elapsed = timeit.default_timer() - start_time
 timeExec.append(elapsed)
 
