@@ -12,4 +12,5 @@ df.head() # shows first 5 rows
 df.tail() # shows last 5 rows
 list(df) # shows all column headers
 df['TRIPPURP'].describe()
-df.shape
+
+print(df.shape)
