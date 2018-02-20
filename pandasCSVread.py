@@ -50,3 +50,4 @@ print('Execution time: {0:.4f} sec'.format(elapsed))
 
 #plt.plot("whyDescSmry",type="bar")
 #df1["WHYFROM"].plot(kind="bar")
+#first5rows1['whyDescSmry'].hist()
