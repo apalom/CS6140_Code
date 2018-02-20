@@ -47,6 +47,8 @@ print('Execution time: {0:.4f} sec'.format(elapsed))
 
 # %% plotting
 
+# Plots histogram
+df1['WHYTRP1S'].hist(bins=25)
 
 #plt.plot("whyDescSmry",type="bar")
 #df1["WHYFROM"].plot(kind="bar")
