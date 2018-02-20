@@ -7,6 +7,7 @@ Created on Sun Feb 18 22:57:53 2018
 
 import pandas as pd
 import timeit
+import matplotlib.pyplot as plt
 
 start_time = timeit.default_timer()
 
@@ -44,3 +45,8 @@ elapsed = timeit.default_timer() - start_time
 # timeit statement
 print('Execution time: {0:.4f} sec'.format(elapsed))
 
+# %% plotting
+
+
+#plt.plot("whyDescSmry",type="bar")
+#df1["WHYFROM"].plot(kind="bar")
