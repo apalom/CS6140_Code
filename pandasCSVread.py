@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 start_time = timeit.default_timer()
 whyID = {}
 whyIDsum = {}
-
+whyIDsumList = []
 
 # NHTS2009 Data Location for Alex's Laptop 
 # df0 = pd.read_csv(r'C:\Users\Alex Palomino\Google Drive\Classes\18_Spring\CS6140 Data Mining\CS6140 Project\Data\CSV\DAYV2PUB.CSV', header=0)
@@ -33,14 +33,16 @@ df1 = df0.filter(['TDCASEID','TRAVDAY','STRTTIME','DWELTIME','ENDTIME','TRIPPURP
 # function call to attribute why descriptions with why codes
 from funcWhyID import funcWhyID
 [df1, whyID, whyIDsum] = funcWhyID(df1, whyID, whyIDsum)
+whyIDsumList = set(df1['whyDescSmry'])
+
 
 # build out dataframe table
 colNames0 = list(df0) # shows all column headers
 colNames1 = list(df1) # shows all column headers
-first5rows0 = df0.head() # shows first 5 rows
-first5rows1 = df1.head() # shows first 5 rows
-last5rows0 = df0.tail() # shows last 5 rows
-last5rows1 = df1.tail() # shows last 5 rows
+firstNrows0 = df0.head(25) # shows first n rows
+firstNrows1 = df1.head(25) # shows first n rows
+lastNrows0 = df0.tail(5) # shows last n rows
+lastNrows1 = df1.tail(5) # shows last n rows
 
 df0['TRIPPURP'].describe()
 
@@ -56,8 +58,9 @@ print('Execution time: {0:.4f} sec'.format(elapsed))
 # %% plotting section
 
 # plots histogram
-df1['WHYTRP1S'].hist(bins=25)
-
+plotHistSmry = df1['WHYTRP1S'].hist(bins=25)
+plotPieSmry = plt.pie(df1['WHYTRP1S'])
+#plotPieSmry = plt.pie(df1['WHYTRP1S'], labels=whyIDsumList, autopct='%1.0f%%)
 #plt.plot("whyDescSmry",type="bar")
 #df1["WHYFROM"].plot(kind="bar")
 #first5rows1['whyDescSmry'].hist()
